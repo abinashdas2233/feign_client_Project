@@ -1,0 +1,10 @@
+package com.kodewish.service;
+
+import org.springframework.http.ResponseEntity;
+
+import com.kodewish.request.ProductRequest;
+
+public interface ProductService {
+	public ResponseEntity createOrder(ProductRequest req);
+
+}

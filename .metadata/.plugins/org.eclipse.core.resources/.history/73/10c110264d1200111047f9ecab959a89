@@ -1,0 +1,5 @@
+package com.kodewish.client;
+
+public interface ProductClient {
+
+}

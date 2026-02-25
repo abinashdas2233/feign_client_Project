@@ -1,0 +1,5 @@
+package com.kodewish.request;
+
+public class ProductRequest {
+
+}

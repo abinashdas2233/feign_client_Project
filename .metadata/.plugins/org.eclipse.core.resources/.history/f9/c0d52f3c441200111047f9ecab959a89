@@ -1,0 +1,5 @@
+package com.kodewish.entity;
+
+public class ProductEntity {
+
+}

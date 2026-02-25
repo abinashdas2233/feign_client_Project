@@ -1,0 +1,5 @@
+package com.kodewish.response;
+
+public class ProductResponse {
+
+}
