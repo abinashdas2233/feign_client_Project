@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: product-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/micro   # changed from mysql → localhost
+    username: root
+    password: Kanha8728@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka   # changed from eurekaservice
+    register-with-eureka: true
+    fetch-registry: true
