@@ -1,0 +1,35 @@
+package com.kodewish.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.kodewish.request.ProductRequest;
+import com.kodewish.response.ProductResponse;
+import com.kodewish.service.ProductService;
+
+@RestController
+@RequestMapping("/flipkart")
+public class ProductController {
+	
+	@Autowired
+	ProductService service;
+	
+	@PostMapping("/create")
+	public ResponseEntity orderPlace(@RequestBody ProductRequest req) {
+		return service.createOrder(req);
+		
+		
+	}
+	
+	 @GetMapping("/fetch/{id}")
+	    public ProductResponse getProduct(@PathVariable int id) {
+		 return service.getbyId(id);
+	 }
+
+}
