@@ -12,5 +12,4 @@ spring:
           uri: lb://order-service
           predicates:
             - Path=/order/fetchdata/**
-          filters:
-            - StripPrefix=1
+          
