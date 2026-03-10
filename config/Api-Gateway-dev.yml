@@ -5,8 +5,12 @@ spring:
   application:
     name: api-gateway
 
-  cloud:
+ cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
       routes:
         - id: order-service
           uri: lb://order-service
