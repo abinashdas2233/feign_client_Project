@@ -8,7 +8,7 @@ spring:
           enabled: false
           lower-case-service-id: true
       routes:
-        - id: user-service
+        - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/order/fetchdata/{id}
