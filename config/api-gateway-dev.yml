@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Api-Gateway
+    name: api-gateway
  data:
     
   cloud:
@@ -10,7 +10,7 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: aadhaar-service
+        - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/order/fetchdata/**
