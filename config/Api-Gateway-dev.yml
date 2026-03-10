@@ -5,15 +5,11 @@ spring:
   application:
     name: Api-Gateway
 
- cloud:
+  cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: false
-          lower-case-service-id: true
       routes:
         - id: order-service
-          uri: lb://order-service
+          uri: lb://ORDER-SERVICE
           predicates:
             - Path=/order/**
           filters:
