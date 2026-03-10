@@ -2,6 +2,10 @@ spring:
   application:
     name: api-gateway
 
+  redis:
+    host: localhost
+    port: 6379
+
   cloud:
     gateway:
       routes:
@@ -9,3 +13,10 @@ spring:
           uri: lb://order-service
           predicates:
             - Path=/order/**
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 5      # tokens per second
+                redis-rate-limiter.burstCapacity: 5      # max tokens stored
+                redis-rate-limiter.requestedTokens: 1   # tokens per request
+                key-resolver: "#{@ipKeyResolver}"       # use IP for rate limiting
