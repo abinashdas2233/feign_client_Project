@@ -14,8 +14,6 @@ spring:
               uri: lb://ORDER-SERVICE
               predicates:
                 - Path=/order/**
-              filters:
-                - StripPrefix=1
 
 eureka:
   client:
