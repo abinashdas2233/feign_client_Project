@@ -11,6 +11,6 @@ spring:
         - id: order-service
           uri: lb://order-service
           predicates:
-            - Path=/order/fetchdata/{id}
+            - Path=/order/fetchdata/**
           filters:
             - StripPrefix=1
