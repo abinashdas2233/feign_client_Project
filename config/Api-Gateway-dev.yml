@@ -11,5 +11,5 @@ spring:
         - id: order-service
           uri: lb://order-service
           predicates:
-            - Path=/order/fetchdata/**
+            - Path=/order/**
           
