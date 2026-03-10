@@ -7,13 +7,15 @@ spring:
 
   cloud:
     gateway:
-      routes:
-        - id: order-service
-          uri: lb://ORDER-SERVICE
-          predicates:
-            - Path=/order/**
-          filters:
-            - StripPrefix=1
+      server:
+        webflux:
+          routes:
+            - id: order-service
+              uri: lb://ORDER-SERVICE
+              predicates:
+                - Path=/order/**
+              filters:
+                - StripPrefix=1
 
 eureka:
   client:
