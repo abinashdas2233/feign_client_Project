@@ -1,16 +1,19 @@
 spring:
   application:
     name: Api-Gateway
+
   cloud:
     gateway:
       discovery:
         locator:
           enabled: false
           lower-case-service-id: true
+
       routes:
         - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/order/**
-         
-          
+
+server:
+  port: 9092
