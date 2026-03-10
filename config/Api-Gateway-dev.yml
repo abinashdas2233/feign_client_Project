@@ -9,8 +9,8 @@ spring:
           lower-case-service-id: true
       routes:
         - id: user-service
-          uri: lb://user-service
+          uri: lb://order-service
           predicates:
-            - Path=/api/users/**
+            - Path=/order/fetchdata/{id}
           filters:
             - StripPrefix=1
